@@ -1,0 +1,13 @@
+:root {
+  --bg-main-color: #24292e
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+  background-color: var(--bg-main-color);
+  font-family: Arial, sans-serif;
+}
