@@ -20,6 +20,7 @@
   ],
   "rules": {
     "comma-dangle": ["error", {
+      "objects": "always",
       "functions": "never"
     }],
     "prettier/prettier": ["error"]
