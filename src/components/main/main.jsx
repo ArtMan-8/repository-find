@@ -18,7 +18,7 @@ export default function Main() {
     setRequestRepo(currentRequest);
   };
 
-  const { data } = lastRequest
+  const { loading, error, data } = lastRequest
     ? getQuery(GET_REPOS, {
         variables: {
           getQuery: `${requestRepo} sort:stars`,
@@ -26,10 +26,15 @@ export default function Main() {
       })
     : getQuery(TOP_REPOS);
 
+  if (error) {
+    const str = `${error}`;
+    return <h2>{str}</h2>;
+  }
+
   return (
     <SearchContext.Provider value={[requestRepo, setRequest]}>
       <Search />
-      <Repos data={data} />
+      {loading ? <h3>Loading...</h3> : <Repos repos={data.search.nodes} />}
       <Paginator />
     </SearchContext.Provider>
   );
