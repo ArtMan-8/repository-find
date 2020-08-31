@@ -1,6 +1,7 @@
 import React from "react";
+import Main from "../main/main";
 import "./app.css";
 
 export default function App() {
-  return <h1 className="app">App Component</h1>;
+  return <Main />;
 }

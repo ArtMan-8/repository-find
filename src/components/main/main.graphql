@@ -1,0 +1,49 @@
+import { gql } from "@apollo/client";
+
+export const TOP_REPOS = gql`
+  query GetTopRepos {
+    search(query: "stars:>50000", type: REPOSITORY, first: 10) {
+      repositoryCount
+      nodes {
+        ... on Repository {
+          name
+          url
+          stargazers {
+            totalCount
+          }
+          ref(qualifiedName: "master") {
+            target {
+              ... on Commit {
+                committedDate
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
+
+export const GET_REPOS = gql`
+  query GetRepos($getQuery: String!) {
+    search(query: $getQuery, type: REPOSITORY, first: 10) {
+      repositoryCount
+      nodes {
+        ... on Repository {
+          name
+          url
+          stargazers {
+            totalCount
+          }
+          ref(qualifiedName: "master") {
+            target {
+              ... on Commit {
+                committedDate
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+`;
