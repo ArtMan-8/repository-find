@@ -1,9 +1,8 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./repos.css";
 
-export default function Repos({ data }) {
-  const repos = data && data.search.nodes;
-
+export default function Repos({ repos }) {
   const getStrDate = (timestamp) => {
     const date = new Date(timestamp);
     const strDate = `${date.getDate()} / ${
@@ -46,3 +45,7 @@ export default function Repos({ data }) {
     </>
   );
 }
+
+Repos.propTypes = {
+  repos: PropTypes.arrayOf(PropTypes.shape).isRequired,
+};

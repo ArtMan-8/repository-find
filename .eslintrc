@@ -27,6 +27,7 @@
       "objects": "only-multiline",
       "functions": "never"
     }],
-    "prettier/prettier": ["error"]
+    "prettier/prettier": ["error"],
+    "react/jsx-one-expression-per-line": "none"
   }
 }
