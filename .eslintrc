@@ -10,17 +10,21 @@
         "jsx": true
     }
   },
-  "plugins": ["react"],
+  "plugins": [
+    "react",
+    "react-hooks"
+  ],
   "extends": [
     "airbnb",
     "airbnb/hooks",
     "eslint:recommended",
     "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:prettier/recommended"
   ],
   "rules": {
     "comma-dangle": ["error", {
-      "objects": "always",
+      "objects": "only-multiline",
       "functions": "never"
     }],
     "prettier/prettier": ["error"]
