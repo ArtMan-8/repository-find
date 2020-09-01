@@ -28,6 +28,6 @@
       "functions": "never"
     }],
     "prettier/prettier": ["error"],
-    "react/jsx-one-expression-per-line": "none"
+    "react/jsx-one-expression-per-line": "off"
   }
 }

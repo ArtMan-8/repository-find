@@ -1,7 +1,26 @@
 table {
-  color: yellow;
+  width: 100%;
+  margin-bottom: 15px;
+  color: #3eccca;
 }
 
 table a {
-  color: goldenrod;
+  color: #ffca52;
+}
+
+table a:visited {
+  color: #a03427;
+}
+
+table a:hover {
+  color: #e85a32;
+}
+
+thead {
+  color: #9484ea;
+  font-size: 18px;
+}
+
+tbody tr td:not(:first-child) {
+  text-align: right;
 }

@@ -34,8 +34,14 @@ export default function Main() {
   return (
     <SearchContext.Provider value={[requestRepo, setRequest]}>
       <Search />
-      {loading ? <h3>Loading...</h3> : <Repos repos={data.search.nodes} />}
-      <Paginator />
+      {loading ? (
+        <h3>Loading...</h3>
+      ) : (
+        <>
+          <Repos repos={data.search.nodes} />
+          <Paginator />
+        </>
+      )}
     </SearchContext.Provider>
   );
 }
