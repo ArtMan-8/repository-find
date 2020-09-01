@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 import "./repos.css";
 
 export default function Repos({ repos }) {
@@ -27,7 +28,7 @@ export default function Repos({ repos }) {
             repos.map((repo) => (
               <tr key={repo.url}>
                 <td>
-                  <a href="/#">{repo.name}</a>
+                  <Link to={`/card/${repo.id}`}>{repo.name}</Link>
                 </td>
                 <td>{repo.stargazers.totalCount}</td>
                 <td>

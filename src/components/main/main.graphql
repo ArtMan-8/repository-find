@@ -6,6 +6,7 @@ export const TOP_REPOS = gql`
       repositoryCount
       nodes {
         ... on Repository {
+          id
           name
           url
           stargazers {
@@ -30,6 +31,7 @@ export const GET_REPOS = gql`
       repositoryCount
       nodes {
         ... on Repository {
+          id
           name
           url
           stargazers {
