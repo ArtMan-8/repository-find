@@ -11,7 +11,7 @@ export const TOP_REPOS = gql`
           stargazers {
             totalCount
           }
-          ref(qualifiedName: "master") {
+          defaultBranchRef {
             target {
               ... on Commit {
                 committedDate
@@ -35,7 +35,7 @@ export const GET_REPOS = gql`
           stargazers {
             totalCount
           }
-          ref(qualifiedName: "master") {
+          defaultBranchRef {
             target {
               ... on Commit {
                 committedDate

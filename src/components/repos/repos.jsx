@@ -30,13 +30,9 @@ export default function Repos({ repos }) {
                   <a href="/#">{repo.name}</a>
                 </td>
                 <td>{repo.stargazers.totalCount}</td>
+                <td>{getStrDate(repo.defaultBranchRef.target.committedDate)}</td>
                 <td>
-                  {repo.ref
-                    ? getStrDate(repo.ref.target.committedDate)
-                    : `error`}
-                </td>
-                <td>
-                  <a href={repo.url}>link</a>
+                  <a href={repo.url}>to Github</a>
                 </td>
               </tr>
             ))}
