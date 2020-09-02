@@ -28,14 +28,16 @@ export default function Repos({ repos }) {
             repos.map((repo) => (
               <tr key={repo.url}>
                 <td>
-                  <Link to={`/card/${repo.id}`}>{repo.name}</Link>
+                  <Link to={`/${repo.id}`}>{repo.name}</Link>
                 </td>
                 <td>{repo.stargazers.totalCount}</td>
                 <td>
                   {getStrDate(repo.defaultBranchRef.target.committedDate)}
                 </td>
                 <td>
-                  <a href={repo.url}>to Github</a>
+                  <a href={repo.url} target="_blank" rel="noreferrer">
+                    to Github
+                  </a>
                 </td>
               </tr>
             ))}

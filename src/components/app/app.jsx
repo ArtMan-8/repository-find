@@ -9,7 +9,10 @@ export default function App() {
     <BrowserRouter>
       <Switch>
         <Route path="/" component={Main} exact />
-        <Route path="/card/:repo" component={Card} />
+        <Route
+          path="/:id"
+          render={(routeProps) => <Card props={routeProps.match.params.id} />}
+        />
       </Switch>
     </BrowserRouter>
   );
