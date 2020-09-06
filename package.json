@@ -1,5 +1,5 @@
 {
-  "name": "test-frontend-avitotech-profe",
+  "name": "test-frontend",
   "version": "1.0.0",
   "description": "Тестовое задание",
   "main": "index.js",
@@ -42,6 +42,7 @@
   },
   "dependencies": {
     "@apollo/client": "3.1.4",
+    "dotenv-webpack": "2.0.0",
     "graphql": "15.3.0",
     "prop-types": "15.7.2",
     "react": "16.13.1",

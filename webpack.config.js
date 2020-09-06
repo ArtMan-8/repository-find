@@ -1,6 +1,7 @@
 /* eslint-disable */
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
   entry: { main: './src/index.jsx' },
@@ -44,6 +45,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/index.html',
       filename: 'index.html'
-    })
+    }),
+    new Dotenv({
+      path: path.resolve(__dirname,'.env'),
+    }),
   ]
 };

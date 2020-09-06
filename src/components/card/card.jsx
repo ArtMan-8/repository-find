@@ -11,8 +11,6 @@ export default function Card({ props: id }) {
     },
   });
 
-  console.log(data);
-
   if (error) {
     const str = `${error}`;
     return <h2>{str}</h2>;

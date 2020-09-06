@@ -5,12 +5,11 @@ import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 import App from "./components/app/app";
 
 require("./index.css");
-require("../.env");
 
 const client = new ApolloClient({
   uri: "https://api.github.com/graphql",
   headers: {
-    authorization: GITHUB_GRAPHQL_API_KEY,
+    authorization: `Bearer ${process.env.GRAPHQL_API_KEY}`,
   },
   cache: new InMemoryCache(),
 });
