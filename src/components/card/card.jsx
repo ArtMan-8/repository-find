@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useQuery as getQuery } from "@apollo/client";
 import { GET_INFO } from "./card.graphql";
-import "./card.css";
+import styles from "./card.css";
 
 export default function Card({ props: id }) {
   const { loading, error, data } = getQuery(GET_INFO, {
@@ -13,13 +13,13 @@ export default function Card({ props: id }) {
 
   if (error) {
     const str = `${error}`;
-    return <h2>{str}</h2>;
+    return <h2 className={styles.h2_error}>{str}</h2>;
   }
 
   return (
     <>
       {loading ? (
-        <h3>Loading...</h3>
+        <h3 className={styles.h3}>Loading...</h3>
       ) : (
         <pre>`${JSON.stringify(data, null, 2)}`</pre>
       )}

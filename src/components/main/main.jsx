@@ -5,7 +5,7 @@ import Search from "../search/search";
 import Repos from "../repos/repos";
 import Paginator from "../paginator/paginator";
 import SearchContext from "../context";
-import "./main.css";
+import styles from "./main.css";
 
 export default function Main() {
   const lastRequest = sessionStorage.getItem("lastRequest");
@@ -27,14 +27,14 @@ export default function Main() {
 
   if (error) {
     const str = `${error}`;
-    return <h2>{str}</h2>;
+    return <h2 className={styles.h2_error}>{str}</h2>;
   }
 
   return (
     <SearchContext.Provider value={[requestRepo, setRequest]}>
       <Search />
       {loading ? (
-        <h3>Loading...</h3>
+        <h3 className={styles.h3}>Loading...</h3>
       ) : (
         <>
           <Repos repos={data.search.nodes} />

@@ -1,4 +1,4 @@
-.root {
+:global(.root) {
   margin: 200px auto auto;
   width: 540px;
 }

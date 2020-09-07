@@ -1,31 +1,31 @@
-table {
+.table {
   width: 100%;
   margin-bottom: 15px;
   color: #3eccca;
 }
 
-table a {
+.table a {
   color: #ffca52;
 }
 
-table a:visited {
+.table a:visited {
   color: #a03427;
 }
 
-table a:hover {
+.table a:hover {
   color: #e85a32;
 }
 
-thead {
+.thead {
   color: #9484ea;
   font-size: 18px;
 }
 
-tbody tr td:first-child {
+.tbody tr td:first-child {
   width: 250px;
 }
 
-tbody tr td:first-child a{
+.tbody tr td:first-child a{
   display: block;
   width: 230px;
   white-space: nowrap;
@@ -33,6 +33,6 @@ tbody tr td:first-child a{
   text-overflow: ellipsis;
 }
 
-tbody tr td:not(:first-child) {
+.tbody tr td:not(:first-child) {
   text-align: right;
 }

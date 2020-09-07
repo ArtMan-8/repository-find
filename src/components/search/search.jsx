@@ -1,6 +1,6 @@
 import React from "react";
 import SearchContext from "../context";
-import "./search.css";
+import styles from "./search.css";
 
 export default function Search() {
   const [, setRequest] = React.useContext(SearchContext);
@@ -8,16 +8,16 @@ export default function Search() {
 
   return (
     <form
+      className={styles.form}
       action="#"
       method="GET"
-      className="search-form"
       onSubmit={(evt) => {
         evt.preventDefault();
         setRequest(valueInput);
       }}
     >
       <input
-        className="search-form__input"
+        className={styles.form__input}
         type="search"
         id="search"
         value={valueInput}
@@ -26,7 +26,7 @@ export default function Search() {
           setValueInput(evt.target.value);
         }}
       />
-      <button className="search-form__btn" type="submit" aria-label="поиск" />
+      <button className={styles.form__btn} type="submit" aria-label="поиск" />
     </form>
   );
 }

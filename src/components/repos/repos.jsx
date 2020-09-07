@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import "./repos.css";
+import styles from "./repos.css";
 
 export default function Repos({ repos }) {
   const getStrDate = (timestamp) => {
@@ -14,8 +14,8 @@ export default function Repos({ repos }) {
 
   return (
     <>
-      <table>
-        <thead>
+      <table className={styles.table}>
+        <thead className={styles.thead}>
           <tr>
             <th>Repository</th>
             <th>Stars</th>
@@ -23,7 +23,7 @@ export default function Repos({ repos }) {
             <th>Link</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className={styles.tbody}>
           {repos &&
             repos.map((repo) => (
               <tr key={repo.url}>
