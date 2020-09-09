@@ -1,23 +1,23 @@
 .table {
   width: 100%;
   margin-bottom: 15px;
-  color: #3eccca;
+  color: var(--text);
 }
 
 .table a {
-  color: #ffca52;
+  color: var(--link);
 }
 
 .table a:visited {
-  color: #a03427;
+  color: var(--link-visited);
 }
 
 .table a:hover {
-  color: #e85a32;
+  color: var(--link-hover);
 }
 
 .thead {
-  color: #9484ea;
+  color: var(--header);
   font-size: 18px;
 }
 

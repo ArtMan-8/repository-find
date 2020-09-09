@@ -7,7 +7,7 @@ import Paginator from "../paginator/paginator";
 import SearchContext from "../context";
 import styles from "./main.css";
 
-import getReposByPages from "./getRepoByPages";
+import getReposByPages from "../../utils/get-repo-by-pages";
 
 export default function Main() {
   const lastRequest = sessionStorage.getItem("lastRequest");

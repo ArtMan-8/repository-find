@@ -1,17 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
+import getStrDate from "../../utils/get-str-date";
 import styles from "./repos.css";
 
 export default function Repos({ repos }) {
-  const getStrDate = (timestamp) => {
-    const date = new Date(timestamp);
-    const strDate = `${date.getDate()} / ${
-      date.getMonth() + 1
-    } / ${date.getFullYear()}`;
-    return strDate;
-  };
-
   return (
     <>
       <table className={styles.table}>

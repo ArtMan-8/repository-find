@@ -1,8 +1,55 @@
-.h3 {
-  text-align: center;
-  color: #9ddb52;
+.h1 {
+  color: var(--header);
+  text-decoration: underline;
+  margin-bottom: 5px;
 }
 
 .h2_error {
-  color: #d34234;
+  color: var(--error);
+}
+
+.h3 {
+  text-align: center;
+  color: var(--loading);
+}
+
+.article {
+  position: relative;
+  color: var(--text);
+}
+
+.face {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 160px;
+  text-align: center;
+}
+
+.face img {
+  width: 100%;
+}
+
+.description, p {
+  width: 300px;
+}
+
+.language {
+  color: var(--header);
+}
+
+.language li {
+  color: var(--text);
+}
+
+.name {
+  color: var(--link);
+}
+
+.name:hover {
+  color: var(--link-hover);
+}
+
+.name:visited {
+  color: var(--link-visited);
 }
