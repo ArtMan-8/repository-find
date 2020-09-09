@@ -30,9 +30,11 @@ export default function Repos({ repos }) {
                 <td>
                   <Link to={`/${repo.id}`}>{repo.name}</Link>
                 </td>
-                <td>{repo.stargazers.totalCount}</td>
+                <td>{repo.stargazers.totalCount || `0`}</td>
                 <td>
-                  {getStrDate(repo.defaultBranchRef.target.committedDate)}
+                  {repo.defaultBranchRef
+                    ? getStrDate(repo.defaultBranchRef.target.committedDate)
+                    : `none`}
                 </td>
                 <td>
                   <a href={repo.url} target="_blank" rel="noreferrer">

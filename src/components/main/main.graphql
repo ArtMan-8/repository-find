@@ -3,7 +3,6 @@ import { gql } from "@apollo/client";
 export const TOP_REPOS = gql`
   query GetTopRepos {
     search(query: "stars:>50000", type: REPOSITORY, first: 10) {
-      repositoryCount
       nodes {
         ... on Repository {
           id
@@ -27,7 +26,7 @@ export const TOP_REPOS = gql`
 
 export const GET_REPOS = gql`
   query GetRepos($getQuery: String!) {
-    search(query: $getQuery, type: REPOSITORY, first: 10) {
+    search(query: $getQuery, type: REPOSITORY, first: 100) {
       repositoryCount
       nodes {
         ... on Repository {
