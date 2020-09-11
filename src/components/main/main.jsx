@@ -50,11 +50,13 @@ export default function Main() {
       ) : (
         <>
           <Repos repos={pages.repos[currentPage - 1]} />
-          <Paginator
-            pages={pages.count}
-            currentPage={currentPage}
-            setPage={setPageRepo}
-          />
+          {pages.count > 1 && (
+            <Paginator
+              pages={pages.count}
+              currentPage={currentPage}
+              setPage={setPageRepo}
+            />
+          )}
         </>
       )}
     </SearchContext.Provider>
