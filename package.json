@@ -1,7 +1,7 @@
 {
-  "name": "test-frontend",
+  "name": "repository-find",
   "version": "1.0.0",
-  "description": "Тестовое задание",
+  "description": "Поиск репозитория на github",
   "main": "index.js",
   "scripts": {
     "eslint": "eslint --ext .jsx --ext .js src/",
@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ArtMan-8/test-frontend-3bV0gb4Q.git"
+    "url": "git+https://github.com/ArtMan-8/repository-find.git"
   },
   "author": "Vladimir Artyukhov",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ArtMan-8/test-frontend-3bV0gb4Q/issues"
+    "url": "https://github.com/ArtMan-8/repository-find/issues"
   },
-  "homepage": "https://github.com/ArtMan-8/test-frontend-3bV0gb4Q#readme",
+  "homepage": "https://github.com/ArtMan-8/repository-find#readme",
   "devDependencies": {
     "@babel/core": "7.11.4",
     "@babel/preset-env": "7.11.0",
