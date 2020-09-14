@@ -1,7 +1,9 @@
 .h1 {
-  color: var(--header);
-  text-decoration: underline;
   margin-bottom: 5px;
+}
+
+.h1 a {
+  color: var(--header);
 }
 
 .h2_error {
@@ -24,10 +26,25 @@
   right: 0;
   width: 160px;
   text-align: center;
+  z-index: -10;
 }
 
 .face img {
   width: 100%;
+}
+
+@media (max-width: 480px) {
+  .face {
+    top: 26px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .face img {
+    opacity: 0.1;
+  }
 }
 
 .description, p {
@@ -46,7 +63,8 @@
   color: var(--link);
 }
 
-.name:hover {
+.name:hover,
+.h1 a:hover {
   color: var(--link-hover);
 }
 

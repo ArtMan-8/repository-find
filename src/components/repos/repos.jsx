@@ -10,26 +10,28 @@ export default function Repos({ repos }) {
       <table className={styles.table}>
         <thead className={styles.thead}>
           <tr>
-            <th>Repository</th>
-            <th>Stars</th>
-            <th>Last Commit</th>
-            <th>Link</th>
+            <th className={styles.name}>Repository</th>
+            <th className={styles.star}>Stars</th>
+            <th className={styles.commit}>Last Commit</th>
+            <th className={styles.link}>Link</th>
           </tr>
         </thead>
         <tbody className={styles.tbody}>
           {repos &&
             repos.map((repo) => (
               <tr key={repo.url}>
-                <td>
+                <td className={styles.name}>
                   <Link to={`/${repo.id}`}>{repo.name}</Link>
                 </td>
-                <td>{repo.stargazers.totalCount || `0`}</td>
-                <td>
+                <td className={styles.star}>
+                  {repo.stargazers.totalCount || `0`}
+                </td>
+                <td className={styles.commit}>
                   {repo.defaultBranchRef
                     ? getStrDate(repo.defaultBranchRef.target.committedDate)
                     : `none`}
                 </td>
-                <td>
+                <td className={styles.link}>
                   <a href={repo.url} target="_blank" rel="noreferrer">
                     to Github
                   </a>

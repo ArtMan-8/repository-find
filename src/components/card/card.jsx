@@ -23,19 +23,25 @@ export default function Card({ props: id }) {
         <h3 className={styles.h3}>Loading...</h3>
       ) : (
         <article className={styles.article}>
-          <h1 className={styles.h1}>{data.node.name}</h1>
+          <h1 className={styles.h1}>
+            <a href={data.node.url}>{data.node.name}</a>
+          </h1>
           <small>Stars - {data.node.stargazers.totalCount}</small>
           <br />
           <small>
             Last commit -{" "}
             {getStrDate(data.node.defaultBranchRef.target.committedDate)}
           </small>
-
-          <div className={styles.face}>
-            <img src={data.node.owner.avatarUrl} alt="repo pic" />
+          <br />
+          <small>
+            Author -{" "}
             <a className={styles.name} href={data.node.owner.url}>
               {data.node.owner.login}
             </a>
+          </small>
+
+          <div className={styles.face}>
+            <img src={data.node.owner.avatarUrl} alt="repo pic" />
           </div>
 
           <p className={styles.description}>{data.node.description}</p>
