@@ -54,6 +54,17 @@ export default function Card({ props: id }) {
               ))}
             </ul>
           )}
+
+          <a
+            className={styles.back}
+            href="/"
+            onClick={(evt) => {
+              evt.preventDefault();
+              window.history.back();
+            }}
+          >
+            back to search
+          </a>
         </article>
       )}
     </>

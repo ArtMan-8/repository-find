@@ -22,7 +22,7 @@
 
 .face {
   position: absolute;
-  top: 0;
+  top: 30px;
   right: 0;
   width: 160px;
   text-align: center;
@@ -59,15 +59,24 @@
   color: var(--text);
 }
 
-.name {
+.name,
+.back {
   color: var(--link);
 }
 
 .name:hover,
-.h1 a:hover {
+.h1 a:hover,
+.back:hover {
   color: var(--link-hover);
 }
 
 .name:visited {
   color: var(--link-visited);
+}
+
+.back {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.9rem;
 }
