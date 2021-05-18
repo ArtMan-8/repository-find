@@ -1,4 +1,4 @@
-export default (count = 1, repos) => {
+export default function getRepoByPages(count = 1, repos) {
   const cn = count > 100 ? 100 : count;
   const coutPages = Math.ceil(cn / 10);
   const reposPages = [];
@@ -8,4 +8,4 @@ export default (count = 1, repos) => {
   }
 
   return { count: coutPages, repos: reposPages };
-};
+}

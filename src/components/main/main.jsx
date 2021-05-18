@@ -1,13 +1,12 @@
 import React from "react";
 import { useQuery as getQuery } from "@apollo/client";
 import { TOP_REPOS, GET_REPOS } from "./main.graphql";
-import Search from "../search/search";
-import Repos from "../repos/repos";
-import Paginator from "../paginator/paginator";
+import Search from "../search";
+import Repos from "../repos";
+import Paginator from "../paginator";
 import SearchContext from "../context";
+import getReposByPages from "../../utils/getRepoByPages";
 import styles from "./main.css";
-
-import getReposByPages from "../../utils/get-repo-by-pages";
 
 export default function Main() {
   const lastRequest = sessionStorage.getItem("lastRequest");
@@ -45,6 +44,7 @@ export default function Main() {
   return (
     <SearchContext.Provider value={[requestRepo, setRequest]}>
       <Search />
+
       {loading ? (
         <h3 className={styles.h3}>Loading...</h3>
       ) : (

@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter, Switch, Route } from "react-router-dom";
-import Main from "../main/main";
-import Card from "../card/card";
+import Main from "../main";
+import Card from "../card";
 import "./app.css";
 
 export default function App() {

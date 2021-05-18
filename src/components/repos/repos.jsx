@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import getStrDate from "../../utils/get-str-date";
+import getStrDate from "../../utils/stringifyDate";
 import styles from "./repos.css";
 
 export default function Repos({ repos }) {

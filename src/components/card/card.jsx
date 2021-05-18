@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { useQuery as getQuery } from "@apollo/client";
 import { GET_INFO } from "./card.graphql";
-import getStrDate from "../../utils/get-str-date";
+import getStrDate from "../../utils/stringifyDate";
 import styles from "./card.css";
 
 export default function Card({ props: id }) {
