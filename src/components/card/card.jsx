@@ -1,11 +1,12 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { useQuery as getQuery } from "@apollo/client";
 import { GET_INFO } from "./card.graphql";
 import getStrDate from "../../utils/stringifyDate";
 import * as styles from "./card.module.css";
+import { NavLink, useParams } from "react-router-dom";
 
-export default function Card({ props: id }) {
+export default function Card() {
+	const { id } = useParams();
 	const { loading, error, data } = getQuery(GET_INFO, {
 		variables: {
 			getId: `${id}`,
@@ -55,22 +56,11 @@ export default function Card({ props: id }) {
 						</ul>
 					)}
 
-					<a
-						className={styles.back}
-						href="/"
-						onClick={(evt) => {
-							evt.preventDefault();
-							window.history.back();
-						}}
-					>
+					<NavLink className={styles.back} to="/">
 						back to search
-					</a>
+					</NavLink>
 				</article>
 			)}
 		</>
 	);
 }
-
-Card.propTypes = {
-	props: PropTypes.string.isRequired,
-};

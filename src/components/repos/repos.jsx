@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import getStrDate from "../../utils/stringifyDate";
 import * as styles from "./repos.module.css";
 
@@ -21,7 +21,7 @@ export default function Repos({ repos }) {
 						repos.map((repo) => (
 							<tr key={repo.url}>
 								<td className={styles.name}>
-									<Link to={`/${repo.id}`}>{repo.name}</Link>
+									<NavLink to={repo.id}>{repo.name}</NavLink>
 								</td>
 								<td className={styles.star}>
 									{repo.stargazers.totalCount || `0`}
