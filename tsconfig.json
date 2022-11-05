@@ -1,0 +1,10 @@
+{
+	"include": ["src/**/*"],
+	"baseUrl": "src/",
+	"compilerOptions": {
+		"allowJs": true,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"jsx": "react-jsx"
+	}
+}

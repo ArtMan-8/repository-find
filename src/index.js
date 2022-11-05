@@ -17,5 +17,5 @@ const root = createRoot(rootContainer);
 root.render(
 	<ApolloProvider client={client}>
 		<App />
-	</ApolloProvider>
+	</ApolloProvider>,
 );
