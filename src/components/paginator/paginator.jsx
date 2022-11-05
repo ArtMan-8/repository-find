@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import * as styles from "./paginator.module.css";
 
 export default function Paginator({ pages, currentPage, setPage }) {
@@ -7,25 +6,18 @@ export default function Paginator({ pages, currentPage, setPage }) {
 		const markup = [];
 		for (let i = 1; i <= pages; i += 1) {
 			markup.push(
-				<li
-					key={i}
-					className={
-						i === currentPage
-							? `${styles.li} ${styles.li__active}`
-							: `${styles.li}`
-					}
-				>
+				<li key={i} className={i === currentPage ? `${styles.li} ${styles.li__active}` : `${styles.li}`}>
 					<a
 						className={styles.a}
 						href={i}
-						onClick={(evt) => {
+						onClick={evt => {
 							evt.preventDefault();
 							setPage(i);
 						}}
 					>
 						{i}
 					</a>
-				</li>
+				</li>,
 			);
 		}
 
@@ -34,9 +26,3 @@ export default function Paginator({ pages, currentPage, setPage }) {
 
 	return <ul className={styles.ul}>{page()}</ul>;
 }
-
-Paginator.propTypes = {
-	currentPage: PropTypes.number.isRequired,
-	pages: PropTypes.number.isRequired,
-	setPage: PropTypes.func.isRequired,
-};

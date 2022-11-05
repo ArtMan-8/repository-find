@@ -6,21 +6,44 @@
 	"license": "ISC",
 	"homepage": "https://github.com/ArtMan-8/repository-find#readme",
 	"scripts": {
-		"start": "parcel src/index.html",
-		"build": "parcel build src/index.html"
+		"lint": "eslint --fix './src/**/*.{js,jsx,ts,tsx}' --config ./.eslintrc.json",
+		"format": "prettier --write './src/**/*.{js,jsx,ts,tsx,css,json}' --config ./.prettierrc.json",
+		"start": "parcel src/index.html --open",
+		"build": "parcel build src/index.html",
+		"prepare": "husky install"
+	},
+	"lint-staged": {
+		"./src/**/*.{js,jsx,ts,tsx}": [
+			"prettier --config ./.prettierrc.json --write",
+			"eslint --config ./.eslintrc.json --fix"
+		]
 	},
 	"dependencies": {
 		"@apollo/client": "^3.7.1",
 		"graphql": "^16.6.0",
-		"prop-types": "^15.8.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",
 		"react-router-dom": "^6.4.3"
 	},
 	"devDependencies": {
 		"@parcel/transformer-graphql": "^2.7.0",
+		"@types/react": "^18.0.25",
+		"@typescript-eslint/eslint-plugin": "^5.42.0",
+		"@typescript-eslint/parser": "^5.42.0",
+		"eslint": "^8.26.0",
+		"eslint-config-airbnb": "^19.0.4",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.26.0",
+		"eslint-plugin-jsx-a11y": "^6.6.1",
+		"eslint-plugin-prettier": "^4.2.1",
+		"eslint-plugin-react": "^7.31.10",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"husky": "^8.0.0",
+		"lint-staged": "^13.0.3",
 		"parcel": "^2.7.0",
-		"process": "^0.11.10"
+		"prettier": "^2.7.1",
+		"process": "^0.11.10",
+		"typescript": "^4.8.4"
 	},
 	"engines": {
 		"node": ">=16"
