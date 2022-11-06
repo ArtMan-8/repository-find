@@ -6,6 +6,7 @@
 	"extends": [
 		"eslint:recommended",
 		"plugin:react/recommended",
+		"plugin:import/recommended",
 		"plugin:@typescript-eslint/recommended",
 		"airbnb",
 		"prettier"
@@ -17,12 +18,43 @@
 		},
 		"ecmaVersion": "latest",
 		"sourceType": "module",
+		"tsconfigRootDir": "./",
 		"project": "./tsconfig.json"
 	},
-	"plugins": ["react", "@typescript-eslint", "prettier"],
+	"plugins": ["react", "@typescript-eslint", "prettier", "import"],
 	"rules": {
-		"react/prop-types": "off",
+		"react/react-in-jsx-scope": "off",
+		"react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
 		"prettier/prettier": "error",
-		"react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
+		"import/prefer-default-export": "off",
+		"import/extensions": "off",
+		"import/order": [
+			"error",
+			{
+				"alphabetize": {
+					"order": "asc"
+				},
+				"groups": ["builtin", "external", "internal"],
+				"newlines-between": "always",
+				"pathGroups": [
+					{
+						"group": "internal",
+						"pattern": "@**/**",
+						"position": "before"
+					}
+				],
+				"pathGroupsExcludedImportTypes": ["internal"]
+			}
+		]
+	},
+	"settings": {
+		"react": {
+			"version": "detect"
+		},
+		"import/resolver": {
+			"node": {
+				"extensions": [".js", ".jsx", ".ts", ".tsx"]
+			}
+		}
 	}
 }

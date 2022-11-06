@@ -5,6 +5,9 @@
 	"author": "Vladimir Artyukhov",
 	"license": "ISC",
 	"homepage": "https://github.com/ArtMan-8/repository-find#readme",
+	"keywords": [
+		"github, search, repository"
+	],
 	"scripts": {
 		"lint": "eslint --fix './src/**/*.{js,jsx,ts,tsx}' --config ./.eslintrc.json",
 		"format": "prettier --write './src/**/*.{js,jsx,ts,tsx,css,json}' --config ./.prettierrc.json",

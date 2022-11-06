@@ -1,0 +1,83 @@
+.h1 {
+	margin-bottom: 5px;
+}
+
+.h1 a {
+	color: var(--header);
+}
+
+.h2_error {
+	color: var(--error);
+}
+
+.h3 {
+	text-align: center;
+	color: var(--loading);
+}
+
+.article {
+	position: relative;
+	color: var(--text);
+}
+
+.face {
+	position: absolute;
+	top: 30px;
+	right: 0;
+	width: 160px;
+	text-align: center;
+	z-index: -10;
+}
+
+.face img {
+	width: 100%;
+}
+
+@media (max-width: 480px) {
+	.face {
+		top: 26px;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+	}
+
+	.face img {
+		opacity: 0.1;
+	}
+}
+
+.description,
+p {
+	width: 300px;
+}
+
+.language {
+	color: var(--header);
+}
+
+.language li {
+	color: var(--text);
+}
+
+.name,
+.back {
+	color: var(--link);
+}
+
+.name:hover,
+.h1 a:hover,
+.back:hover {
+	color: var(--link-hover);
+}
+
+.name:visited {
+	color: var(--link-visited);
+}
+
+.back {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 0.9rem;
+}
