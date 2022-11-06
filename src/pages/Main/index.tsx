@@ -1,29 +1,29 @@
-import { useState } from "react";
+import { ReactElement, useState } from "react";
 
 import { useQuery as getQuery } from "@apollo/client";
 
+import Paginator from "../../components/Paginator";
+import Repos from "../../components/Repos";
+import Search from "../../components/Search";
+import SearchContext from "../../components/context";
 import { getRepoByPages } from "../../utils/getRepoByPages";
-import Paginator from "../Paginator";
-import Repos from "../Repos";
-import Search from "../Search";
-import SearchContext from "../context";
 import { TOP_REPOS, GET_REPOS } from "./main.graphql";
 import * as styles from "./main.module.css";
 
-export default function Main() {
-	const lastRequest = sessionStorage.getItem("lastRequest");
-	const lastPage = sessionStorage.getItem("lastPage");
+export default function Main(): ReactElement {
+	const lastRequest = sessionStorage.getItem("lastRequest") || "";
+	const lastPage = sessionStorage.getItem("lastPage") || 1;
 
-	const [requestRepo, setRequestRepo] = useState(lastRequest);
-	const [currentPage, setPage] = useState(+lastPage || 1);
+	const [requestRepo, setRequestRepo] = useState<string>(lastRequest);
+	const [currentPage, setPage] = useState<number>(Number(lastPage));
 
-	const setRequest = currentRequest => {
+	const setRequest = (currentRequest: string): void => {
 		sessionStorage.setItem("lastRequest", currentRequest);
 		setRequestRepo(currentRequest);
 	};
 
-	const setPageRepo = page => {
-		sessionStorage.setItem("lastPage", page);
+	const setPageRepo = (page: number): void => {
+		sessionStorage.setItem("lastPage", String(page));
 		setPage(page);
 	};
 
@@ -36,14 +36,13 @@ export default function Main() {
 		: getQuery(TOP_REPOS);
 
 	if (error) {
-		const str = `${error}`;
-		return <h2 className={styles.h2_error}>{str}</h2>;
+		return <h2 className={styles.h2_error}>{error.message}</h2>;
 	}
 
 	const pages = data && getRepoByPages(data.search.nodes, data.search.repositoryCount);
 
 	return (
-		<SearchContext.Provider value={[requestRepo, setRequest]}>
+		<SearchContext.Provider value={{ requestRepo, setRequest }}>
 			<Search />
 
 			{loading ? (
