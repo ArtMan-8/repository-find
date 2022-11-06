@@ -1,10 +1,10 @@
-import { useContext, useState } from "react";
+import { ReactElement, useContext, useState } from "react";
 
 import SearchContext from "../context";
 import * as styles from "./search.module.css";
 
-export default function Search() {
-	const [, setRequest] = useContext(SearchContext);
+export default function Search(): ReactElement {
+	const { setRequest } = useContext(SearchContext);
 	const [valueInput, setValueInput] = useState("");
 
 	return (

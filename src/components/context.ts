@@ -1,5 +1,10 @@
 import { createContext } from "react";
 
-const SearchContext = createContext(null);
+export interface ISearchContext {
+	requestRepo: string;
+	setRequest: (currentRequest: string) => void;
+}
+
+const SearchContext = createContext<ISearchContext>({} as ISearchContext);
 
 export default SearchContext;

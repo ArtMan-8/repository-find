@@ -2,8 +2,8 @@ import "./app.module.css";
 import { ReactElement } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
-import Card from "../Card";
-import Main from "../Main";
+import Card from "../../pages/Card";
+import Main from "../../pages/Main";
 
 export default function App(): ReactElement {
 	return (

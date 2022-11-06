@@ -7,10 +7,12 @@
 		"eslint:recommended",
 		"plugin:react/recommended",
 		"plugin:import/recommended",
+		"plugin:import/typescript",
 		"plugin:@typescript-eslint/recommended",
 		"airbnb",
 		"prettier"
 	],
+	"plugins": ["react", "@typescript-eslint", "prettier", "import"],
 	"parser": "@typescript-eslint/parser",
 	"parserOptions": {
 		"ecmaFeatures": {
@@ -21,11 +23,11 @@
 		"tsconfigRootDir": "./",
 		"project": "./tsconfig.json"
 	},
-	"plugins": ["react", "@typescript-eslint", "prettier", "import"],
 	"rules": {
 		"react/react-in-jsx-scope": "off",
 		"react/jsx-filename-extension": [1, { "extensions": [".jsx", ".tsx"] }],
 		"prettier/prettier": "error",
+		"@typescript-eslint/no-unused-vars": "error",
 		"import/prefer-default-export": "off",
 		"import/extensions": "off",
 		"import/order": [
