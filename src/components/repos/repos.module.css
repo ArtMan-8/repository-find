@@ -1,0 +1,67 @@
+.table {
+	width: 100%;
+	margin-bottom: 15px;
+	color: var(--text);
+}
+
+.table a {
+	color: var(--link);
+}
+
+.table a:visited {
+	color: var(--link-visited);
+}
+
+.table a:hover {
+	color: var(--link-hover);
+}
+
+.thead {
+	color: var(--header);
+	font-size: 18px;
+}
+
+.table tr {
+	display: flex;
+	justify-content: space-between;
+}
+
+.tbody tr td:not(:first-child) {
+	text-align: right;
+}
+
+.name {
+	flex-grow: 1;
+	margin-right: 10px;
+	overflow-wrap: anywhere;
+}
+
+.star {
+	width: 65px;
+	flex-shrink: 0;
+}
+
+.commit {
+	width: 110px;
+	flex-shrink: 0;
+	margin-left: 10px;
+}
+
+.link {
+	width: 65px;
+	flex-shrink: 0;
+	margin-left: 10px;
+}
+
+@media (max-width: 350px) {
+	.star,
+	.commit {
+		display: none;
+	}
+}
+
+@media (max-width: 450px) {
+	.commit {
+		display: none;
+	}
+}
